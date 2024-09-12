@@ -65,7 +65,7 @@
         .download:hover {
             background-color: #005bb5;
         }
-		#pdf-viewer {
+		 #pdf-viewer {
             display: none;
             position: fixed;
             top: 10%;
@@ -74,25 +74,16 @@
             height: 80%;
             background: white;
             border: 1px solid #ddd;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
             z-index: 1000;
+            padding: 10px;
         }
         #pdf-viewer iframe {
             width: 100%;
-            height: calc(100% - 40px); /* Adjust height to accommodate the close button */
+            height: calc(100% - 40px); /* Adjust height for padding */
         }
-        #close-btn {
-            display: block;
-            text-align: right;
-            padding: 10px;
-            background: #f8f8f8;
-            border-bottom: 1px solid #ddd;
-        }
-        #close-btn button {
-            background: #ccc;
-            border: none;
-            padding: 10px;
-            cursor: pointer;
+        #show-viewer-btn {
+            margin: 20px;
         }
     </style>
 </head>
@@ -102,7 +93,7 @@
     <h1>Sharafat Hussain</h1>
     <p>Solution Architect | Healthcare Systems Integration Specialist</p>
 </header>
-
+<main>
 <section>
     <h2>Professional Summary</h2>
     <p>With a wealth of technical leadership experience, I specialize in healthcare enterprise application integration (EAI) solutions across the NHS UK, US healthcare, and Australian healthcare sectors. I’ve achieved significant cost savings, leveraging agile methodologies and leading successful technology migrations, particularly in healthcare integration environments. My passion for combining cutting-edge technologies like AI and blockchain with healthcare has led me to discover new possibilities in the industry.</p>
@@ -158,37 +149,31 @@
     <h2>Download My CV</h2>
 	<a href="https://drive.google.com/file/d/11e0wLOiYgdvtsHJI_U4rGidGdVcDCUhR/view?usp=sharing" class="download">Download CV</a
 </section>
-
+<section id="pdf-section">
 <button id="show-viewer-btn">Show PDF</button>
 
 <div id="pdf-viewer">
-    <div id="close-btn">
-        <button id="close-btn">Close</button>
-    </div>
-    <iframe href="https://drive.google.com/file/d/11e0wLOiYgdvtsHJI_U4rGidGdVcDCUhR/view?usp=sharing" class="download">Download My CV</iframe>
+    <iframe href="https://drive.google.com/file/d/11e0wLOiYgdvtsHJI_U4rGidGdVcDCUhR/view?usp=sharing" class="download"></iframe>
 </div>
+</section>
+</main>
+<footer>
+    <p>&copy; 2024 Sharafat Hussain. All rights reserved.</p>
+</footer>
 
 <script>
-    document.getElementById('show-viewer-btn').addEventListener('click', function() {
-        document.getElementById('pdf-viewer').style.display = 'block';
-    });
+    var viewer = document.getElementById('pdf-viewer');
+    var showBtn = document.getElementById('show-viewer-btn');
 
-    document.getElementById('close-btn').addEventListener('click', function() {
-        document.getElementById('pdf-viewer').style.display = 'none';
+    showBtn.addEventListener('click', function() {
+        viewer.style.display = 'block';
     });
 
     document.addEventListener('click', function(event) {
-        var viewer = document.getElementById('pdf-viewer');
-        var showBtn = document.getElementById('show-viewer-btn');
         if (!viewer.contains(event.target) && !showBtn.contains(event.target) && viewer.style.display === 'block') {
             viewer.style.display = 'none';
         }
     });
 </script>
-
-<footer>
-    <p>&copy; 2024 Sharafat Hussain. All rights reserved.</p>
-</footer>
-
 </body>
 </html>
