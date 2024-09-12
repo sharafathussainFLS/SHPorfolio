@@ -65,23 +65,6 @@
         .download:hover {
             background-color: #005bb5;
         }
-		 #pdf-viewer {
-            display: none;
-            position: fixed;
-            top: 10%;
-            left: 10%;
-            width: 80%;
-            height: 80%;
-            background: white;
-            border: 1px solid #ddd;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
-            z-index: 1000;
-            padding: 10px;
-        }
-        #pdf-viewer iframe {
-            width: 100%;
-            height: calc(100% - 40px);
-        }
     </style>
 </head>
 <body>
@@ -90,7 +73,6 @@
     <h1>Sharafat Hussain</h1>
     <p>Solution Architect | Healthcare Systems Integration Specialist</p>
 </header>
-<main>
 <section>
     <h2>Professional Summary</h2>
     <p>With a wealth of technical leadership experience, I specialize in healthcare enterprise application integration (EAI) solutions across the NHS UK, US healthcare, and Australian healthcare sectors. I’ve achieved significant cost savings, leveraging agile methodologies and leading successful technology migrations, particularly in healthcare integration environments. My passion for combining cutting-edge technologies like AI and blockchain with healthcare has led me to discover new possibilities in the industry.</p>
@@ -146,31 +128,8 @@
     <h2>Download My CV</h2>
 	<a href="https://drive.google.com/file/d/11e0wLOiYgdvtsHJI_U4rGidGdVcDCUhR/view?usp=sharing" class="download">Download CV</a
 </section>
-<section id="pdf-section">
-            <button id="show-viewer-btn">Show PDF</button>
-            <div id="pdf-viewer">
-                <iframe src="https://docs.google.com/gview?url=https://drive.google.com/uc?id=11e0wLOiYgdvtsHJI_U4rGidGdVcDCUhR" type="application/pdf"></iframe>
-            </div>
- </section>
-</main>
 <footer>
     <p>&copy; 2024 Sharafat Hussain. All rights reserved.</p>
 </footer>
-<<script>
-        document.addEventListener('DOMContentLoaded', function() {
-            var viewer = document.getElementById('pdf-viewer');
-            var showBtn = document.getElementById('show-viewer-btn');
-
-            showBtn.addEventListener('click', function() {
-                viewer.style.display = 'block';
-            });
-
-            document.addEventListener('click', function(event) {
-                if (!viewer.contains(event.target) && !showBtn.contains(event.target) && viewer.style.display === 'block') {
-                    viewer.style.display = 'none';
-                }
-            });
-        });
-    </script>
 </body>
 </html>
