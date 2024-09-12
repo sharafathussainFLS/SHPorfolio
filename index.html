@@ -80,10 +80,7 @@
         }
         #pdf-viewer iframe {
             width: 100%;
-            height: calc(100% - 40px); /* Adjust height for padding */
-        }
-        #show-viewer-btn {
-            margin: 20px;
+            height: calc(100% - 40px);
         }
     </style>
 </head>
@@ -150,30 +147,30 @@
 	<a href="https://drive.google.com/file/d/11e0wLOiYgdvtsHJI_U4rGidGdVcDCUhR/view?usp=sharing" class="download">Download CV</a
 </section>
 <section id="pdf-section">
-<button id="show-viewer-btn">Show PDF</button>
-
-<div id="pdf-viewer">
-    <iframe href="https://drive.google.com/file/d/11e0wLOiYgdvtsHJI_U4rGidGdVcDCUhR/view?usp=sharing" class="download"></iframe>
-</div>
+            <button id="show-viewer-btn">Show PDF</button>
+            <div id="pdf-viewer">
+                <iframe src="https://drive.google.com/file/d/11e0wLOiYgdvtsHJI_U4rGidGdVcDCUhR/view?usp=sharing" type="application/pdf"></iframe>
+            </div>
 </section>
 </main>
 <footer>
     <p>&copy; 2024 Sharafat Hussain. All rights reserved.</p>
 </footer>
-
 <script>
-    var viewer = document.getElementById('pdf-viewer');
-    var showBtn = document.getElementById('show-viewer-btn');
+        document.addEventListener('DOMContentLoaded', function() {
+            var viewer = document.getElementById('pdf-viewer');
+            var showBtn = document.getElementById('show-viewer-btn');
 
-    showBtn.addEventListener('click', function() {
-        viewer.style.display = 'block';
-    });
+            showBtn.addEventListener('click', function() {
+                viewer.style.display = 'block';
+            });
 
-    document.addEventListener('click', function(event) {
-        if (!viewer.contains(event.target) && !showBtn.contains(event.target) && viewer.style.display === 'block') {
-            viewer.style.display = 'none';
-        }
-    });
-</script>
+            document.addEventListener('click', function(event) {
+                if (!viewer.contains(event.target) && !showBtn.contains(event.target) && viewer.style.display === 'block') {
+                    viewer.style.display = 'none';
+                }
+            });
+        });
+    </script>
 </body>
 </html>
